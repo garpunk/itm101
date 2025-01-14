@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taco Clicker</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8e8c8;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        .taco {
+            width: 150px;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .counter {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>Taco Clicker</h1>
+    <img id="taco" src="https://via.placeholder.com/150.png?text=Taco" alt="Taco" class="taco">
+    <div class="counter">Clicks: <span id="counter">0</span></div>
+
+    <script>
+        const taco = document.getElementById('taco');
+        const counterSpan = document.getElementById('counter');
+        let count = 0;
+
+        taco.addEventListener('click', () => {
+            count++;
+            counterSpan.textContent = count;
+
+            // Add spin animation
+            taco.style.transform = `rotate(${count * 360}deg)`;
+        });
+    </script>
+</body>
+</html>
